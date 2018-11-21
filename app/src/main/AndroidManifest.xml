@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ahmadsisfo.droid_windi">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,5 +32,20 @@
         <activity android:name="com.ahmadsisfo.droid_windi.SoalActivity" />
         <activity android:name="com.ahmadsisfo.droid_windi.DetailActivity" />
         <activity android:name="com.ahmadsisfo.droid_windi.MateriActivity"></activity>
+
+        <activity
+            android:name=".JigsawActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".PuzzleActivity"></activity>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
     </application>
 </manifest>

@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.materi:
                 Toast.makeText(this, "Materi", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this, MateriActivity.class);
+                intent = new Intent(this, JigsawActivity.class);
                 intent.putExtra("name", "Materi");
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 this.startActivity(intent);
