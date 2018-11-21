@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="deepPurple">#7c4dff</color>
+    <color name="materialYellow">#FFB300</color>
+    <color name="materialGreen">#00bfa5</color>
+    <color name="materialBlue">#0092ff</color>
+
+    <color name="album_title">#4c4c4c</color>
+    <color name="white">#FFFFFF</color>
+
+</resources>
