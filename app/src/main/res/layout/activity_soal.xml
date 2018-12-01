@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background1"
-    tools:context="com.ahmadsisfo.droid_rekha.droid_windi.SoalActivity">
+    tools:context="com.ahmadsisfo.droid_windi.SoalActivity">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"

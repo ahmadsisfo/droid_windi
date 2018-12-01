@@ -17,7 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ahmadsisfo.droid_windi.soal.Hormon;
+import com.ahmadsisfo.droid_windi.soal.Pencernaan;
 import com.ahmadsisfo.droid_windi.soal.Soal;
 
 import java.util.ArrayList;
@@ -53,8 +53,8 @@ public class SoalActivity extends AppCompatActivity {
         listSoal = new ArrayList<Soal>();
         String tipe = getIntent().getExtras().getString("tipe", null);
         switch (tipe){
-            case "hormon":
-                Hormon db1 = new Hormon(this);
+            case "pencernaan":
+                Pencernaan db1 = new Pencernaan(this);
                 listSoal = db1.getSoal();
                 break;
             case "indra":
@@ -66,7 +66,7 @@ public class SoalActivity extends AppCompatActivity {
                 //listSoal = db3.getSoal();
                 break;
             default:
-                Hormon db0 = new Hormon(this);
+                Pencernaan db0 = new Pencernaan(this);
                 listSoal = db0.getSoal();
                 break;
         }

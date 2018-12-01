@@ -33,6 +33,8 @@ public class PuzzleActivity extends AppCompatActivity {
     ArrayList<PuzzlePiece> pieces;
     String mCurrentPhotoPath;
     String mCurrentPhotoUri;
+    String materiName;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +46,12 @@ public class PuzzleActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final String assetName = intent.getStringExtra("assetName");
+        materiName = intent.getStringExtra("materiName");
+        name = intent.getStringExtra("name");
+
         mCurrentPhotoPath = intent.getStringExtra("mCurrentPhotoPath");
         mCurrentPhotoUri = intent.getStringExtra("mCurrentPhotoUri");
-
+        //Toast.makeText(this, assetName, Toast.LENGTH_LONG).show();
         // run image related code after the view was laid out
         // to have all dimensions calculated
         imageView.post(new Runnable() {
@@ -83,7 +88,7 @@ public class PuzzleActivity extends AppCompatActivity {
 
         AssetManager am = getAssets();
         try {
-            InputStream is = am.open("img/" + assetName);
+            InputStream is = am.open("" + assetName);
             // Get the dimensions of the bitmap
             BitmapFactory.Options bmOptions = new BitmapFactory.Options();
             bmOptions.inJustDecodeBounds = true;
@@ -287,6 +292,13 @@ public class PuzzleActivity extends AppCompatActivity {
 
     public void checkGameOver() {
         if (isGameOver()) {
+            Intent intent;
+            intent = new Intent(this, DetailActivity.class);
+            intent.putExtra("name", name);
+            intent.putExtra("file", materiName);
+
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            this.startActivity(intent);
             finish();
         }
     }

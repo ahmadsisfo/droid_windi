@@ -8,7 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.ahmadsisfo.droid_windi.JigsawActivity;
+import com.ahmadsisfo.droid_windi.PuzzleActivity;
 import com.ahmadsisfo.droid_windi.R;
 import com.ahmadsisfo.droid_windi.DetailActivity;
 import com.ahmadsisfo.droid_windi.model.Homemenu;
@@ -41,15 +44,41 @@ public class HomemenuAdapter extends RecyclerView.Adapter<HomemenuAdapter.MyView
         @Override
         public void onClick(View v) {
             int pos = getAdapterPosition();
+            //Toast.makeText(v.getContext(), "You clicked " + pos, Toast.LENGTH_SHORT).show();
             if (pos != RecyclerView.NO_POSITION){
-                Intent intent;
-                intent = new Intent(mContext, DetailActivity.class);
-                intent.putExtra("name", albumList.get(pos).getName());
-                intent.putExtra("thumbnail", albumList.get(pos).getThumbnail());
-                intent.putExtra("file", albumList.get(pos).getFile());
+                if(pos == 3) {
+                    Intent intent;
+                    intent = new Intent(mContext, DetailActivity.class);
+                    intent.putExtra("name", albumList.get(pos).getName());
+                    intent.putExtra("thumbnail", albumList.get(pos).getThumbnail());
+                    intent.putExtra("file", albumList.get(pos).getFile());
 
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                mContext.startActivity(intent);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    mContext.startActivity(intent);
+                } else if(pos == 0) {
+                    Intent intent;
+                    intent = new Intent(mContext, JigsawActivity.class);
+                    intent.putExtra("name", albumList.get(pos).getName());
+                    intent.putExtra("thumbnail", albumList.get(pos).getThumbnail());
+                    intent.putExtra("file", albumList.get(pos).getFile());
+
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    mContext.startActivity(intent);
+                } else if(pos == 1){
+                    Intent intent = new Intent(mContext, PuzzleActivity.class);
+                    intent.putExtra("assetName", "img/pencernaan_manusia.jpg");
+                    intent.putExtra("materiName", "file:///android_asset/pencernaan_manusia.html");
+                    intent.putExtra("name", "Pencernaan Manusia");
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    mContext.startActivity(intent);
+                } else if(pos == 2){
+                    Intent intent = new Intent(mContext, PuzzleActivity.class);
+                    intent.putExtra("assetName", "img/pencernaan_ruminansia.jpg");
+                    intent.putExtra("materiName", "file:///android_asset/pencernaan_ruminansia.html");
+                    intent.putExtra("name", "Pencernaan Ruminansia");
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    mContext.startActivity(intent);
+                }
                 //Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.getName(), Toast.LENGTH_SHORT).show();
             }
         }

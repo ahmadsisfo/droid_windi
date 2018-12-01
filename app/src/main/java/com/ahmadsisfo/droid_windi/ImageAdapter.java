@@ -19,12 +19,14 @@ public class ImageAdapter extends BaseAdapter {
     private Context mContext;
     private AssetManager am;
     private String[] files;
+    private String path;
 
-    public ImageAdapter(Context c) {
+    public ImageAdapter(Context c, String p) {
         mContext = c;
+        path     = p;
         am = mContext.getAssets();
         try {
-            files  = am.list("img");
+            files  = am.list(path);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,7 +61,7 @@ public class ImageAdapter extends BaseAdapter {
                     private Bitmap bitmap;
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        bitmap = getPicFromAsset(imageView, files[position]);
+                        bitmap = getPicFromAsset(imageView, path+"/"+files[position]);
                         return null;
                     }
 
@@ -86,7 +88,7 @@ public class ImageAdapter extends BaseAdapter {
         }
 
         try {
-            InputStream is = am.open("img/" + assetName);
+            InputStream is = am.open("" + assetName);
             // Get the dimensions of the bitmap
             BitmapFactory.Options bmOptions = new BitmapFactory.Options();
             bmOptions.inJustDecodeBounds = true;

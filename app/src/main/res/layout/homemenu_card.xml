@@ -33,13 +33,13 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:gravity="center"
-                android:alpha="0.7"
+                android:alpha="0.9"
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
                 android:paddingTop="-100dp"
                 android:background="#ffffff"
                 android:textColor="@color/album_title"
-                android:textSize="17sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/count"

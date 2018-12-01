@@ -38,9 +38,9 @@ public class MateriActivity extends AppCompatActivity {
         albumList = new ArrayList<>();
         adapter = new HomemenuAdapter(this, albumList);
 
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 3);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.addItemDecoration(new GridSpacingItemDecoration(3, dpToPx(10), true));
+        recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
@@ -56,10 +56,9 @@ public class MateriActivity extends AppCompatActivity {
 
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.drawable.rangka,
-                R.drawable.tulang,
-                R.drawable.sendi,
-                R.drawable.otot,
+                R.drawable.zatmakanan,
+                R.drawable.pencernaanmanusia,
+                R.drawable.pencernaanruminansia,
                 R.drawable.gangguan,
         };
 
@@ -67,19 +66,16 @@ public class MateriActivity extends AppCompatActivity {
                 "file:///android_asset/rangka.html",
                 "file:///android_asset/tulang.html",
                 "file:///android_asset/sendi.html",
-                "file:///android_asset/otot.html",
                 "file:///android_asset/gangguan.html",
         };
 
-        Homemenu a = new Homemenu("Rangka", 0, covers[0], file[0]);
+        Homemenu a = new Homemenu("Zat Makanan", 0, covers[0], file[0]);
         albumList.add(a);
-        a = new Homemenu("Tulang", 1, covers[1], file[1]);
+        a = new Homemenu("Sistem Pencernaan Manusia", 1, covers[1], file[1]);
         albumList.add(a);
-        a = new Homemenu("Sendi", 2, covers[2], file[2]);
+        a = new Homemenu("Sistem Pencernaan Ruminansia", 2, covers[2], file[2]);
         albumList.add(a);
-        a = new Homemenu("Otot", 3, covers[3], file[3]);
-        albumList.add(a);
-        a = new Homemenu("Gangguan", 4, covers[4], file[4]);
+        a = new Homemenu("Gangguan", 3, covers[3], file[3]);
         albumList.add(a);
 
         adapter.notifyDataSetChanged();

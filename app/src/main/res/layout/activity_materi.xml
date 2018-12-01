@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background3"
-    tools:context="com.ahmadsisfo.droid_rekha.droid_windi.MateriActivity">
+    android:background="@drawable/background1"
+    tools:context="com.ahmadsisfo.droid_windi.MateriActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
