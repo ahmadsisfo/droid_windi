@@ -35,7 +35,8 @@ public class Pencernaan extends SQLiteOpenHelper {
                 "\t 1)\t Penyerapan air\n" +
                 "\t 2)\t Penyerapan mineral\n" +
                 "\t 3)\t Penyerapan ion-ion\n" +
-                "\t 4)\t Pembusukan oleh Escherchia coli\n"
+                "\t 4)\t Pembusukan oleh Escherchia coli\n" +
+                "Proses pencernaan yang terjadi dalam usus besar adalah ..."
         );
         values.put("pil_a", "A.\t 1 dan 2");
         values.put("pil_b", "B.\t 2 dan 3");

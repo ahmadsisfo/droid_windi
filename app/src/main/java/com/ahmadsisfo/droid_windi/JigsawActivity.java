@@ -35,17 +35,20 @@ public class JigsawActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jigsaw);
 
+        final String name = getIntent().getExtras().getString("name");
+        getSupportActionBar().setTitle(name);
+
         AssetManager am = getAssets();
         try {
-            final String[] files  = am.list("zat");
+            final String[] files  = am.list(name);
 
             GridView grid = findViewById(R.id.grid);
-            grid.setAdapter(new ImageAdapter(this, "zat"));
+            grid.setAdapter(new ImageAdapter(this, name));
             grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     Intent intent = new Intent(getApplicationContext(), PuzzleActivity.class);
-                    intent.putExtra("assetName", "zat/" + files[i % files.length]);
+                    intent.putExtra("assetName", name + "/" + files[i % files.length]);
                     intent.putExtra("materiName", "file:///android_asset/" + files[i % files.length] + ".html");
                     intent.putExtra("name", files[i % files.length]);
                     startActivity(intent);

@@ -48,8 +48,8 @@ public class HomemenuAdapter extends RecyclerView.Adapter<HomemenuAdapter.MyView
             if (pos != RecyclerView.NO_POSITION){
                 if(pos == 3) {
                     Intent intent;
-                    intent = new Intent(mContext, DetailActivity.class);
-                    intent.putExtra("name", albumList.get(pos).getName());
+                    intent = new Intent(mContext, JigsawActivity.class);
+                    intent.putExtra("name", "gangguan");
                     intent.putExtra("thumbnail", albumList.get(pos).getThumbnail());
                     intent.putExtra("file", albumList.get(pos).getFile());
 
@@ -58,7 +58,7 @@ public class HomemenuAdapter extends RecyclerView.Adapter<HomemenuAdapter.MyView
                 } else if(pos == 0) {
                     Intent intent;
                     intent = new Intent(mContext, JigsawActivity.class);
-                    intent.putExtra("name", albumList.get(pos).getName());
+                    intent.putExtra("name", "zat");
                     intent.putExtra("thumbnail", albumList.get(pos).getThumbnail());
                     intent.putExtra("file", albumList.get(pos).getFile());
 
