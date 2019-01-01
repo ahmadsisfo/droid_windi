@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ahmadsisfo.droid_windi.JigsawActivity;
 import com.ahmadsisfo.droid_windi.PuzzleActivity;
@@ -48,8 +47,9 @@ public class HomemenuAdapter extends RecyclerView.Adapter<HomemenuAdapter.MyView
             if (pos != RecyclerView.NO_POSITION){
                 if(pos == 3) {
                     Intent intent;
-                    intent = new Intent(mContext, JigsawActivity.class);
-                    intent.putExtra("name", "gangguan");
+                    intent = new Intent(mContext, DetailActivity.class);
+                    intent.putExtra("name", "PencernaanManusia");
+                    intent.putExtra("materiName", "file:///android_asset/gangguan.html");
                     intent.putExtra("thumbnail", albumList.get(pos).getThumbnail());
                     intent.putExtra("file", albumList.get(pos).getFile());
 
@@ -65,10 +65,15 @@ public class HomemenuAdapter extends RecyclerView.Adapter<HomemenuAdapter.MyView
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     mContext.startActivity(intent);
                 } else if(pos == 1){
-                    Intent intent = new Intent(mContext, PuzzleActivity.class);
-                    intent.putExtra("assetName", "img/pencernaan_manusia.jpg");
-                    intent.putExtra("materiName", "file:///android_asset/pencernaan_manusia.html");
-                    intent.putExtra("name", "Pencernaan Manusia");
+                    //Intent intent = new Intent(mContext, PuzzleActivity.class);
+                    //intent.putExtra("assetName", "img/pencernaan_manusia.jpg");
+                    //intent.putExtra("materiName", "file:///android_asset/pencernaan_manusia.html");
+                    //intent.putExtra("name", "PencernaanManusia");
+
+                    Intent intent = new Intent(mContext, JigsawActivity.class);
+                    intent.putExtra("name", "PencernaanManusia");
+                    intent.putExtra("thumbnail", albumList.get(pos).getThumbnail());
+                    intent.putExtra("file", albumList.get(pos).getFile());
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     mContext.startActivity(intent);
                 } else if(pos == 2){
